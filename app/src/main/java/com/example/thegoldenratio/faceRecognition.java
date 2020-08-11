@@ -24,7 +24,7 @@ public class faceRecognition extends AppCompatActivity {
     private static final String subscriptionKey = "1bbcc1273dc742fa9bbc495dd2259cbb";
 
     private static final String uriBase =
-            "https://goldenratioonface.cognitiveservices.azure.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age%2Cgender%2CheadPose%2Csmile%2CfacialHair%2Cglasses%2Cemotion%2Chair%2Cmakeup%2Cocclusion%2Caccessories%2Cblur%2Cexposure%2Cnoise";
+            "https://goldenratioonface.cognitiveservices.azure.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=true";
 
 
     private static final String imageWithFaces =
@@ -55,10 +55,14 @@ public class faceRecognition extends AppCompatActivity {
                 RequestBody body = RequestBody.create(mediaType,
                         imageWithFaces);
                 Request request = new Request.Builder()
-                        .url(url)
+                        .url(uriBase).post(body)
                         .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey)
+                        .addHeader("Ocp-Apim-Subscription-Region", "centralindia")
+                        .addHeader("Content-type", "application/json")
                         .build();
                 try {
+                    client.setProtocols(Arrays.asList(Protocol.HTTP_1_1));
+
 
                     Response response = client.newCall(request).execute();
                     String reu = response.body().string();
