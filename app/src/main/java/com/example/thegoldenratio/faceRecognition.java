@@ -133,11 +133,6 @@ public class faceRecognition extends AppCompatActivity {
             myRectPaint.setColor(TEXT_COLOR);
             myRectPaint.setStyle(Paint.Style.STROKE);
             myRectPaint.setStrokeWidth(STROKE_WIDTH);
-            int x1 = (int)noseTipX;
-            int y1 = (int)eyeRightOuterY;
-            int x2 = (int)eyeRightOuterX;
-            int y2 = (int)noseTipY;
-            Log.i("result", x1 + " " + y1 + " " + x2 + " " + y2);
 
             Bitmap tempBitmap = Bitmap.createBitmap(myBitmap.getWidth(), myBitmap.getHeight(), Bitmap.Config.RGB_565);
             Log.i("result", myBitmap.getWidth() + " "+ myBitmap.getHeight());
@@ -145,7 +140,9 @@ public class faceRecognition extends AppCompatActivity {
 
             tempCanvas.drawBitmap(myBitmap, 0, 0, null);
 
-            tempCanvas.drawRoundRect(new RectF(x1,y1,x2,y2), 2, 2, myRectPaint);
+            //for right eye and nose golden rectangle
+            tempCanvas.drawRoundRect(new RectF((int)noseTipX, (int)eyeRightOuterY, (int)eyeRightOuterX, (int)noseTipY), 2, 2, myRectPaint);
+            tempCanvas.drawLine((int)eyeRightInnerX, (int)eyeRightOuterY, (int)eyeRightInnerX, (int)noseTipY, myRectPaint);
 
             myImageView.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
         }catch (Exception e){
