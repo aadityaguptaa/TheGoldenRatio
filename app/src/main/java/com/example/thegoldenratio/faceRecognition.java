@@ -149,7 +149,7 @@ public class faceRecognition extends AppCompatActivity {
             tempCanvas.drawBitmap(myBitmap, 0, 0, null);
             double pp = 0.026458333;
 
-            //for right eye and nose golden rectangle
+            //for both eye and nose golden rectangle
             tempCanvas.drawRoundRect(new RectF((int)noseTipX, (int)eyeRightOuterY, (int)eyeRightOuterX, (int)noseTipY), 2, 2, myRectPaint);
             tempCanvas.drawLine((int)eyeRightInnerX, (int)eyeRightOuterY, (int)eyeRightInnerX, (int)noseTipY, myRectPaint);
             tempCanvas.drawRoundRect(new RectF((int)eyeLeftOuterX, (int)eyeLeftOuterY, (int)noseTipX, (int)noseTipY), 2, 2, myRectPaint);
