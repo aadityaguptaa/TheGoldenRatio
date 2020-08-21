@@ -51,7 +51,7 @@ public class faceRecognition extends AppCompatActivity {
     private static final String TAG = "TextGraphic";
     private static final int TEXT_COLOR = Color.RED;
     private static final float TEXT_SIZE = 54.0f;
-    private static final float STROKE_WIDTH = 4.0f;
+    private static final float STROKE_WIDTH = 8.0f;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +125,12 @@ public class faceRecognition extends AppCompatActivity {
             JSONObject eyeRightOuter = faceLandmarks.getJSONObject("eyeRightOuter");
             double eyeRightOuterX = eyeRightOuter.getDouble("x");
             double eyeRightOuterY = eyeRightOuter.getDouble("y");
+            JSONObject eyeLeftInner = faceLandmarks.getJSONObject("eyeLeftInner");
+            double eyeLeftInnerX = eyeLeftInner.getDouble("x");
+            double eyeLeftInnerY = eyeLeftInner.getDouble("y");
+            JSONObject eyeLeftOuter = faceLandmarks.getJSONObject("eyeLeftOuter");
+            double eyeLeftOuterX = eyeLeftOuter.getDouble("x");
+            double eyeLeftOuterY = eyeLeftOuter.getDouble("y");
 
             ImageView myImageView = findViewById(R.id.imageView);
             Bitmap myBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.jennif);
@@ -133,16 +139,21 @@ public class faceRecognition extends AppCompatActivity {
             myRectPaint.setColor(TEXT_COLOR);
             myRectPaint.setStyle(Paint.Style.STROKE);
             myRectPaint.setStrokeWidth(STROKE_WIDTH);
+            final float scale = getResources().getDisplayMetrics().density;
+            Log.i("scale", scale+"");
 
             Bitmap tempBitmap = Bitmap.createBitmap(myBitmap.getWidth(), myBitmap.getHeight(), Bitmap.Config.RGB_565);
             Log.i("result", myBitmap.getWidth() + " "+ myBitmap.getHeight());
             Canvas tempCanvas = new Canvas(tempBitmap);
 
             tempCanvas.drawBitmap(myBitmap, 0, 0, null);
+            double pp = 0.026458333;
 
             //for right eye and nose golden rectangle
             tempCanvas.drawRoundRect(new RectF((int)noseTipX, (int)eyeRightOuterY, (int)eyeRightOuterX, (int)noseTipY), 2, 2, myRectPaint);
             tempCanvas.drawLine((int)eyeRightInnerX, (int)eyeRightOuterY, (int)eyeRightInnerX, (int)noseTipY, myRectPaint);
+            tempCanvas.drawRoundRect(new RectF((int)eyeLeftOuterX, (int)eyeLeftOuterY, (int)noseTipX, (int)noseTipY), 2, 2, myRectPaint);
+            tempCanvas.drawLine((int)eyeLeftInnerX, (int)eyeLeftOuterY, (int)eyeLeftInnerX, (int)noseTipY, myRectPaint);
 
             myImageView.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
         }catch (Exception e){
