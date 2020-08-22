@@ -212,6 +212,18 @@ public class faceRecognition extends AppCompatActivity {
             tempCanvas.drawRoundRect(new RectF((int)lipsRectX, (int)lipsRectY, (int)lipsRectXdas, (int)lipsRectYdas), 2, 2, myRectPaint);
             tempCanvas.drawLine((float)smallRectX, (float)lipsRectY, (float)smallRectX, (float)lipsRectYdas, myRectPaint);
 
+            //for pupilNoseRect
+            double pnX = pupilLeftX;
+            double pnY = pupilLeftY;
+            double pnRectBreadth = pupilRightX - pupilLeftX;
+            double pnRectHeight = pnRectBreadth/1.618;
+            double pnXdas = pupilRightX;
+            double pnYdas = pnY+pnRectHeight;
+            double smallpnRectY = pnRectHeight/2.618;
+            myRectPaint.setColor(Color.BLUE);
+            tempCanvas.drawRoundRect(new RectF((int)pnX, (int)pnY, (int)pnXdas, (int)pnYdas), 2, 2, myRectPaint);
+            tempCanvas.drawLine((float)pnX, (float)(pnYdas-smallpnRectY), (float)pnXdas, (float)(pnYdas-smallpnRectY), myRectPaint);
+
             myImageView.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
         }catch (Exception e){
             Log.i("result", e.toString());
