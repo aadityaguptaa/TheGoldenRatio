@@ -51,7 +51,7 @@ public class faceRecognition extends AppCompatActivity {
     private static final String TAG = "TextGraphic";
     private static final int TEXT_COLOR = Color.RED;
     private static final float TEXT_SIZE = 54.0f;
-    private static final float STROKE_WIDTH = 8.0f;
+    private static final float STROKE_WIDTH = 4.0f;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,9 +116,13 @@ public class faceRecognition extends AppCompatActivity {
             double height = faceRectangle.getDouble("height");
 
             JSONObject faceLandmarks = one.getJSONObject("faceLandmarks");
+
+            //for nose
             JSONObject noseTip = faceLandmarks.getJSONObject("noseTip");
             double noseTipX = noseTip.getDouble("x");
             double noseTipY = noseTip.getDouble("y");
+
+            //JSON parsing for right and left eyes
             JSONObject eyeRightInner = faceLandmarks.getJSONObject("eyeRightInner");
             double eyeRightInnerX = eyeRightInner.getDouble("x");
             double eyeRightInnerY = eyeRightInner.getDouble("y");
@@ -131,12 +135,28 @@ public class faceRecognition extends AppCompatActivity {
             JSONObject eyeLeftOuter = faceLandmarks.getJSONObject("eyeLeftOuter");
             double eyeLeftOuterX = eyeLeftOuter.getDouble("x");
             double eyeLeftOuterY = eyeLeftOuter.getDouble("y");
+            JSONObject eyeLeftTop = faceLandmarks.getJSONObject("eyeLeftTop");
+            double eyeLeftTopX = eyeLeftTop.getDouble("x");
+            double eyeLeftTopY = eyeLeftTop.getDouble("y");
+            JSONObject eyeLeftBottom = faceLandmarks.getJSONObject("eyeLeftBottom");
+            double eyeLeftBottomX = eyeLeftBottom.getDouble("x");
+            double eyeLeftBottomY = eyeLeftBottom.getDouble("y");
+
+            //JSON parsing for both pupils
+            JSONObject pupilLeft = faceLandmarks.getJSONObject("pupilLeft");
+            double pupilLeftX = pupilLeft.getDouble("x");
+            double pupilLeftY = pupilLeft.getDouble("y");
+            JSONObject pupilRight = faceLandmarks.getJSONObject("pupilRight");
+            double pupilRightX = pupilRight.getDouble("x");
+            double pupilRightY = pupilRight.getDouble("y");
+
+
 
             ImageView myImageView = findViewById(R.id.imageView);
             Bitmap myBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.jennif);
             Paint myRectPaint;
             myRectPaint = new Paint();
-            myRectPaint.setColor(TEXT_COLOR);
+            myRectPaint.setColor(Color.GREEN);
             myRectPaint.setStyle(Paint.Style.STROKE);
             myRectPaint.setStrokeWidth(STROKE_WIDTH);
             final float scale = getResources().getDisplayMetrics().density;
@@ -152,9 +172,21 @@ public class faceRecognition extends AppCompatActivity {
             //for both eye and nose golden rectangle
             tempCanvas.drawRoundRect(new RectF((int)noseTipX, (int)eyeRightOuterY, (int)eyeRightOuterX, (int)noseTipY), 2, 2, myRectPaint);
             tempCanvas.drawLine((int)eyeRightInnerX, (int)eyeRightOuterY, (int)eyeRightInnerX, (int)noseTipY, myRectPaint);
-            tempCanvas.drawRoundRect(new RectF((int)eyeLeftOuterX, (int)eyeLeftOuterY, (int)noseTipX, (int)noseTipY), 2, 2, myRectPaint);
-            tempCanvas.drawLine((int)eyeLeftInnerX, (int)eyeLeftOuterY, (int)eyeLeftInnerX, (int)noseTipY, myRectPaint);
+            /*tempCanvas.drawRoundRect(new RectF((int)eyeLeftOuterX, (int)eyeLeftOuterY, (int)noseTipX, (int)noseTipY), 2, 2, myRectPaint);
+              tempCanvas.drawLine((int)eyeLeftInnerX, (int)eyeLeftOuterY, (int)eyeLeftInnerX, (int)noseTipY, myRectPaint);*/
 
+            //for pupils and chin rectangle
+            myRectPaint.setColor(Color.CYAN);
+            double distBetweenPupils = pupilRightX - pupilLeftX;
+            int rectHeight = (int)((distBetweenPupils)*(1.618));
+            double smallRectHeight = distBetweenPupils/1.618;
+            double smallRectY = pupilLeftY + (rectHeight - smallRectHeight);
+            tempCanvas.drawRoundRect(new RectF((int)pupilLeftX, (int)pupilLeftY, (int)pupilRightX, (int)pupilLeftY+rectHeight), 2, 2, myRectPaint);
+            tempCanvas.drawLine((int)pupilLeftX, (int)smallRectY, (int)pupilRightX ,  (int)smallRectY, myRectPaint);
+
+            //for pupil/eyewidth rect
+            double pupilWidth = eyeLeftTopY - eyeLeftBottomY;
+            double pupilRectBreadth = pupilWidth*1.618;
             myImageView.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
         }catch (Exception e){
             Log.i("result", e.toString());
