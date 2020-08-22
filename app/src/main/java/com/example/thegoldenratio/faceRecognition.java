@@ -150,6 +150,14 @@ public class faceRecognition extends AppCompatActivity {
             double pupilRightX = pupilRight.getDouble("x");
             double pupilRightY = pupilRight.getDouble("y");
 
+            //for mouth
+            JSONObject mouthLeft = faceLandmarks.getJSONObject("mouthLeft");
+            double mouthLeftX = mouthLeft.getDouble("x");
+            double mouthLeftY = mouthLeft.getDouble("y");
+            JSONObject mouthRight = faceLandmarks.getJSONObject("mouthRight");
+            double mouthRightX = mouthRight.getDouble("x");
+            double mouthRightY = mouthRight.getDouble("y");
+
 
 
             ImageView myImageView = findViewById(R.id.imageView);
@@ -185,8 +193,25 @@ public class faceRecognition extends AppCompatActivity {
             tempCanvas.drawLine((int)pupilLeftX, (int)smallRectY, (int)pupilRightX ,  (int)smallRectY, myRectPaint);
 
             //for pupil/eyewidth rect
-            double pupilWidth = eyeLeftTopY - eyeLeftBottomY;
-            double pupilRectBreadth = pupilWidth*1.618;
+            /*double pupilRectHeight = eyeLeftTopY - eyeLeftBottomY;
+            double pupilRectBreadth = pupilRectHeight*1.618;
+            double pupilRectX = eyeLeftTopX - (pupilRectBreadth)/2;
+            double pupilRectY = eyeLeftTopY;
+            myRectPaint.setColor(Color.MAGENTA);
+            tempCanvas.drawRoundRect(new RectF((int)pupilRectX, (int)pupilRectY, (int)(pupilRectX + pupilRectBreadth), (int)(pupilRectY+pupilRectHeight)), 2, 2, myRectPaint);
+            */
+            //for lips rect
+            double lipsRectBreadth = mouthRightX - mouthLeftX;
+            double lipsRectHeight = lipsRectBreadth/1.618;
+            double lipsRectY = mouthLeftY - lipsRectHeight/2;
+            double lipsRectX = mouthLeftX;
+            double lipsRectXdas = mouthRightX;
+            double lipsRectYdas = lipsRectY+lipsRectHeight;
+            double smallRectX = lipsRectX + (lipsRectBreadth/2.618);
+            myRectPaint.setColor(Color.MAGENTA);
+            tempCanvas.drawRoundRect(new RectF((int)lipsRectX, (int)lipsRectY, (int)lipsRectXdas, (int)lipsRectYdas), 2, 2, myRectPaint);
+            tempCanvas.drawLine((float)smallRectX, (float)lipsRectY, (float)smallRectX, (float)lipsRectYdas, myRectPaint);
+
             myImageView.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
         }catch (Exception e){
             Log.i("result", e.toString());
