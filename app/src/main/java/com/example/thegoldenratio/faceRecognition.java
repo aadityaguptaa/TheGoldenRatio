@@ -224,6 +224,24 @@ public class faceRecognition extends AppCompatActivity {
             tempCanvas.drawRoundRect(new RectF((int)pnX, (int)pnY, (int)pnXdas, (int)pnYdas), 2, 2, myRectPaint);
             tempCanvas.drawLine((float)pnX, (float)(pnYdas-smallpnRectY), (float)pnXdas, (float)(pnYdas-smallpnRectY), myRectPaint);
 
+            //for center-inner-width
+            double ciwSmallRectX = eyeLeftOuterX;
+            double ciwSmallRectY = eyeLeftOuterY;
+            double ciwRectRightTopX = noseTipX;
+            double ciwRectRightTopY = eyeLeftOuterY;
+            double ciwSmallRectDista = noseTipX - eyeLeftOuterX;
+            double ciwSmallRectDistb = ciwSmallRectDista/1.618;
+            double ciwRectX = eyeLeftOuterX - ciwSmallRectDistb;
+            double ciwRectY = eyeLeftOuterY;
+            double ciwRectBreadth = noseTipX - ciwRectX;
+            double ciwRectHeight = ciwRectBreadth * 1.618;
+            double ciwRectXdas = ciwRectX + ciwRectBreadth;
+            double ciwRectYdas = ciwRectY + ciwRectHeight;
+            myRectPaint.setColor(Color.BLACK);
+            tempCanvas.drawRoundRect(new RectF((int)ciwRectX, (int)ciwRectY, (int)ciwRectXdas, (int)ciwRectYdas), 2, 2, myRectPaint);
+            tempCanvas.drawLine((float)ciwSmallRectX, (float)ciwSmallRectY, (float)ciwSmallRectX, (float)ciwSmallRectY + (float)ciwRectHeight, myRectPaint);
+
+
             myImageView.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
         }catch (Exception e){
             Log.i("result", e.toString());
