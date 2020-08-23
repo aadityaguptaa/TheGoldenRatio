@@ -18,6 +18,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -162,6 +163,8 @@ public class faceRecognition extends AppCompatActivity {
                             if(index > 5){
                                 index = 1;
                             }
+                            String text;
+                            TextView faceRecTextView = findViewById(R.id.faceRecTextView);
 
                             final ImageView myImageView = findViewById(R.id.imageView);
                             final Bitmap myBitmap = mSelectedImage;
@@ -182,6 +185,8 @@ public class faceRecognition extends AppCompatActivity {
                             switch(index) {
                                 //for both eye and nose golden rectangle
                                 case(1):
+                                    text = "Eye corners to nose";
+                                    faceRecTextView.setText(text);
                                     tempCanvas.drawRoundRect(new RectF((int)noseTipX, (int)eyeRightOuterY, (int)eyeRightOuterX, (int)noseTipY), 2, 2, myRectPaint);
                                     tempCanvas.drawLine((int)eyeRightInnerX, (int)eyeRightOuterY, (int)eyeRightInnerX, (int)noseTipY, myRectPaint);
                                     /*tempCanvas.drawRoundRect(new RectF((int)eyeLeftOuterX, (int)eyeLeftOuterY, (int)noseTipX, (int)noseTipY), 2, 2, myRectPaint);
@@ -190,6 +195,8 @@ public class faceRecognition extends AppCompatActivity {
                                     break;
                                 case(2):
                                     //for pupils and chin rectangle
+                                    text = "Pupils to nose to chin";
+                                    faceRecTextView.setText(text);
                                     myRectPaint.setColor(Color.CYAN);
                                     double distBetweenPupils = pupilRightX - pupilLeftX;
                                     int rectHeight = (int)((distBetweenPupils)*(1.618));
@@ -209,6 +216,9 @@ public class faceRecognition extends AppCompatActivity {
                                     */
                                 case(3):
                                     //for lips rect
+                                    text = "Cupid's bow tip to width of Lips";
+                                    faceRecTextView.setText(text);
+
                                     double lipsRectBreadth = mouthRightX - mouthLeftX;
                                     double lipsRectHeight = lipsRectBreadth/1.618;
                                     double lipsRectY = mouthLeftY - lipsRectHeight/2;
@@ -223,6 +233,8 @@ public class faceRecognition extends AppCompatActivity {
                                     break;
                                 case(4):
                                     //for pupilNoseRect
+                                    text = "Pupils to nose flare to nose bottom";
+                                    faceRecTextView.setText(text);
                                     double pnX = pupilLeftX;
                                     double pnY = pupilLeftY;
                                     double pnRectBreadth = pupilRightX - pupilLeftX;
@@ -237,6 +249,8 @@ public class faceRecognition extends AppCompatActivity {
                                     break;
                                 case(5):
                                     //for center-inner-width
+                                    text = "Center to inner outside of eye to width of face";
+                                    faceRecTextView.setText(text);
                                     double ciwSmallRectX = eyeLeftOuterX;
                                     double ciwSmallRectY = eyeLeftOuterY;
                                     double ciwSmallRectDista = noseTipX - eyeLeftOuterX;
@@ -263,6 +277,8 @@ public class faceRecognition extends AppCompatActivity {
                             if(index < 1){
                                 index = 5;
                             }
+                            String text;
+                            TextView faceRecTextView = findViewById(R.id.faceRecTextView);
 
                             final ImageView myImageView = findViewById(R.id.imageView);
                             final Bitmap myBitmap = mSelectedImage;
@@ -284,6 +300,8 @@ public class faceRecognition extends AppCompatActivity {
                             switch(index) {
                                 //for both eye and nose golden rectangle
                                 case(1):
+                                    text = "Eye corners to nose";
+                                    faceRecTextView.setText(text);
                                     tempCanvas.drawRoundRect(new RectF((int)noseTipX, (int)eyeRightOuterY, (int)eyeRightOuterX, (int)noseTipY), 2, 2, myRectPaint);
                                     tempCanvas.drawLine((int)eyeRightInnerX, (int)eyeRightOuterY, (int)eyeRightInnerX, (int)noseTipY, myRectPaint);
                                     /*tempCanvas.drawRoundRect(new RectF((int)eyeLeftOuterX, (int)eyeLeftOuterY, (int)noseTipX, (int)noseTipY), 2, 2, myRectPaint);
@@ -292,6 +310,8 @@ public class faceRecognition extends AppCompatActivity {
                                     break;
                                 case(2):
                                     //for pupils and chin rectangle
+                                    text = "Pupils to nose to chin";
+                                    faceRecTextView.setText(text);
                                     myRectPaint.setColor(Color.CYAN);
                                     double distBetweenPupils = pupilRightX - pupilLeftX;
                                     int rectHeight = (int)((distBetweenPupils)*(1.618));
@@ -301,7 +321,7 @@ public class faceRecognition extends AppCompatActivity {
                                     tempCanvas.drawLine((int)pupilLeftX, (int)smallRectY, (int)pupilRightX ,  (int)smallRectY, myRectPaint);
                                     myImageView.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
                                     break;
-                                    //for pupil/eyewidth rect
+                                //for pupil/eyewidth rect
                                     /*double pupilRectHeight = eyeLeftTopY - eyeLeftBottomY;
                                     double pupilRectBreadth = pupilRectHeight*1.618;
                                     double pupilRectX = eyeLeftTopX - (pupilRectBreadth)/2;
@@ -311,6 +331,9 @@ public class faceRecognition extends AppCompatActivity {
                                     */
                                 case(3):
                                     //for lips rect
+                                    text = "Cupid's bow tip to width of Lips";
+                                    faceRecTextView.setText(text);
+
                                     double lipsRectBreadth = mouthRightX - mouthLeftX;
                                     double lipsRectHeight = lipsRectBreadth/1.618;
                                     double lipsRectY = mouthLeftY - lipsRectHeight/2;
@@ -325,6 +348,8 @@ public class faceRecognition extends AppCompatActivity {
                                     break;
                                 case(4):
                                     //for pupilNoseRect
+                                    text = "Pupils to nose flare to nose bottom";
+                                    faceRecTextView.setText(text);
                                     double pnX = pupilLeftX;
                                     double pnY = pupilLeftY;
                                     double pnRectBreadth = pupilRightX - pupilLeftX;
@@ -339,10 +364,10 @@ public class faceRecognition extends AppCompatActivity {
                                     break;
                                 case(5):
                                     //for center-inner-width
+                                    text = "Center to inner outside of eye to width of face";
+                                    faceRecTextView.setText(text);
                                     double ciwSmallRectX = eyeLeftOuterX;
                                     double ciwSmallRectY = eyeLeftOuterY;
-                                    double ciwRectRightTopX = noseTipX;
-                                    double ciwRectRightTopY = eyeLeftOuterY;
                                     double ciwSmallRectDista = noseTipX - eyeLeftOuterX;
                                     double ciwSmallRectDistb = ciwSmallRectDista/1.618;
                                     double ciwRectX = eyeLeftOuterX - ciwSmallRectDistb;
