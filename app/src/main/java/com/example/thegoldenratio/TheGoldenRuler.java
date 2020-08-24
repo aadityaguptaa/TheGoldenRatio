@@ -1,106 +1,209 @@
 package com.example.thegoldenratio;
 
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.graphics.Matrix;
+import android.graphics.Camera;
 import android.os.Bundle;
-import android.util.Rational;
-import android.util.Size;
+import android.util.Log;
 import android.view.Surface;
-import android.view.TextureView;
-import android.view.ViewGroup;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.camera.core.CameraX;
-import androidx.camera.core.ImageCapture;
-import androidx.camera.core.ImageCaptureConfig;
-import androidx.camera.core.Preview;
-import androidx.camera.core.PreviewConfig;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-public class TheGoldenRuler extends AppCompatActivity {
+import java.io.IOException;
+import java.util.List;
 
-    private int REQUEST_CODE_PERMISSIONS = 101;
-    private String[] REQUIRED_PERMISSIONS =new String[]{"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE"};
+public class TheGoldenRuler extends AppCompatActivity implements SurfaceHolder.Callback {
+    private SurfaceView surfaceView;
+    private SurfaceHolder surfaceHolder;
+    private Camera camera;
+    private Button flipCamera;
+    private Button flashCameraButton;
+    private Button captureImage;
+    private int cameraId;
+    private boolean flashmode = false;
+    private int rotation;
 
-    TextureView textureView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_golden_ruler);
+        cameraId = android.hardware.Camera.CameraInfo.CAMERA_FACING_BACK;
+        flipCamera = (Button) findViewById(R.id.flipCamera);
+        flashCameraButton = (Button) findViewById(R.id.flash);
+        captureImage = (Button) findViewById(R.id.captureImage);
+        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
+        surfaceHolder = surfaceView.getHolder();
+        surfaceHolder.addCallback(this);
+        flipCamera.setOnClickListener(this);
+        captureImage.setOnClickListener(this);
+        flashCameraButton.setOnClickListener(this);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        textureView = findViewById(R.id.cameraView);
-
-        if(allPermissionGranted()){
-            startCamera();
-        }else {
-            ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
+        if (!getBaseContext().getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_CAMERA_FLASH)) {
+            flashCameraButton.setVisibility(View.GONE);
         }
     }
 
-    private void startCamera(){
-        CameraX.unbindAll();
-        Rational aspectRatio = new Rational(textureView.getWidth(), textureView.getHeight());
-        Size screen = new Size(textureView.getWidth(), textureView.getHeight());
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+        if (!openCamera(android.hardware.Camera.CameraInfo.CAMERA_FACING_BACK)) {
+            alertCameraDialog ();
+        }
 
-        PreviewConfig previewConfig = new PreviewConfig.Builder().setTargetAspectRatio(aspectRatio).setTargetResolution(screen).build();
-        Preview preview = new Preview(previewConfig);
+    }
 
-        preview.setOnPreviewOutputUpdateListener(new Preview.OnPreviewOutputUpdateListener() {
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+
+    }
+
+    private void alertCameraDialog() {
+        AlertDialog.Builder dialog = createAlert(TheGoldenRuler.this,
+                "Camera info", "error to open camera");
+        dialog.setNegativeButton("OK", new DialogInterface.OnClickListener() {
             @Override
-            public void onUpdated(Preview.PreviewOutput output) {
-                ViewGroup parent = (ViewGroup) textureView.getParent();
-                parent.removeView(textureView);
-                parent.addView(textureView);
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
 
-                textureView.setSurfaceTexture(output.getSurfaceTexture());
-                updateTransform();
             }
         });
 
-        ImageCaptureConfig imageCaptureConfig = new ImageCaptureConfig.Builder().setCaptureMode(ImageCapture.CaptureMode.MIN_LATENCY).setTargetRotation(getWindowManager().getDefaultDisplay().getRotation()).build();
-        final Button imgCap = findViewById(R.id.button);
-
-
+        dialog.show();
     }
 
-    private void updateTransform(){
-        Matrix mx = new Matrix();
-        float w = textureView.getMeasuredWidth();
-        float h = textureView.getMeasuredHeight();
-
-        float cx = w/2f;
-        float cy = h/2f;
-
-        int rotationDgr;
-        int rotation = (int)textureView.getRotation();
-
-        switch (rotation){
-            case Surface
-                    .ROTATION_0:
-                rotationDgr = 0;
-            case Surface.ROTATION_90:
-                rotationDgr = 90;
-            case Surface.ROTATION_180:
-                rotationDgr = 180;
-            case Surface.ROTATION_270:
-                rotationDgr = 270;
-                break;
-            default:
-                return;
+    private boolean openCamera(int id) {
+        boolean result = false;
+        cameraId = id;
+        releaseCamera();
+        try {
+            camera = Camera.open(cameraId);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        if (camera != null) {
+            try {
+                setUpCamera(camera);
+                camera.setErrorCallback(new ErrorCallback() {
 
-        mx.postRotate((float)rotationDgr, cx, cy);
-        textureView.setTransform(mx);
-    }
-
-    private boolean allPermissionGranted(){
-        for(String permission : REQUIRED_PERMISSIONS){
-            if(ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED){
-                return false;
+                    @Override
+                    public void onError(int error, Camera camera) {
+//to show the error message.
+                    }
+                });
+                camera.setPreviewDisplay(surfaceHolder);
+                camera.startPreview();
+                result = true;
+            } catch (IOException e) {
+                e.printStackTrace();
+                result = false;
+                releaseCamera();
             }
         }
-        return true;
+        return result;
     }
+
+    private void releaseCamera() {
+        try {
+            if (camera != null) {
+                camera.setPreviewCallback(null);
+                camera.setErrorCallback(null);
+                camera.stopPreview();
+                camera.release();
+                camera = null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("error", e.toString());
+            camera = null;
+        }
+    }
+
+    private void setUpCamera(Camera c) {
+        Camera.CameraInfo info = new Camera.CameraInfo();
+        Camera.getCameraInfo(cameraId, info);
+        rotation = getWindowManager().getDefaultDisplay().getRotation();
+        int degree = 0;
+        switch (rotation) {
+            case Surface.ROTATION_0:
+                degree = 0;
+                break;
+            case Surface.ROTATION_90:
+                degree = 90;
+                break;
+            case Surface.ROTATION_180:
+                degree = 180;
+                break;
+            case Surface.ROTATION_270:
+                degree = 270;
+                break;
+
+            default:
+                break;
+        }
+
+        if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+            // frontFacing
+            rotation = (info.orientation + degree) % 330;
+            rotation = (360 - rotation) % 360;
+        } else {
+            // Back-facing
+            rotation = (info.orientation - degree + 360) % 360;
+        }
+        c.setDisplayOrientation(rotation);
+        Parameters params = c.getParameters();
+
+        showFlashButton(params);
+
+        List<String> focusModes = params.getSupportedFlashModes();
+        if (focusModes != null) {
+            if (focusModes
+                    .contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
+                params.setFlashMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+            }
+        }
+
+        params.setRotation(rotation);
+    }
+
+    private void showFlashButton(Parameters params) {
+        boolean showFlash = (getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_CAMERA_FLASH) && params.getFlashMode() != null)
+                && params.getSupportedFlashModes() != null
+                && params.getSupportedFocusModes().size() > 1;
+
+        flashCameraButton.setVisibility(showFlash ? View.VISIBLE
+                : View.INVISIBLE);
+
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.flash:
+                flashOnButton();
+                break;
+            case R.id.flipCamera:
+                flipCamera();
+                break;
+            case R.id.captureImage:
+                takeImage();
+                break;
+
+            default:
+                break;
+        }
+    }
+
 }
