@@ -11,12 +11,15 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+
+import com.munon.turboimageview.TurboImageView;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +28,7 @@ public class TheGoldenRuler extends AppCompatActivity {
 
     public String currentPhotoPath;
     public Bitmap mSelectedImage;
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -44,6 +48,8 @@ public class TheGoldenRuler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_golden_ruler);
+        TurboImageView turboImageView = findViewById(R.id.turboImageView);
+        turboImageView.addObject(this, R.drawable.goldenuler1);
 
 
         if(ContextCompat.checkSelfPermission(TheGoldenRuler.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
@@ -55,6 +61,10 @@ public class TheGoldenRuler extends AppCompatActivity {
         cameraClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ImageView dragThisArrow = findViewById(R.id.dragThisArrow);
+                TextView dragThisText = findViewById(R.id.dragCenterText);
+                dragThisArrow.setVisibility(View.INVISIBLE);
+                dragThisText.setVisibility(View.INVISIBLE);
                 String fileName = "photo";
                 File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
                 try{
@@ -70,5 +80,6 @@ public class TheGoldenRuler extends AppCompatActivity {
             }
         });
     }
+
 
 }
