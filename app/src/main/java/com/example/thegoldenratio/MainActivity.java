@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button mainActivityButton = findViewById(R.id.mainActivityButton);
         Button theGoldeGridButton = findViewById(R.id.TheGoldenGridButton);
+        Button earthAndMoon = findViewById(R.id.earthAndMoonButton);
+
 
         //starts faceRecognition Intent
         mainActivityButton.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent goldenGridIntent = new Intent(MainActivity.this, TheGoldenRuler.class);
                 startActivity(goldenGridIntent);
+            }
+        });
+
+        //starts EarthAndMoon Activity
+        earthAndMoon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent EarthAndMoon = new Intent(MainActivity.this, EarthAndMoon.class);
+                startActivity(EarthAndMoon);
             }
         });
     }
