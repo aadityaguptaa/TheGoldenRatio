@@ -61,5 +61,70 @@
         app:layout_constraintTop_toBottomOf="@+id/earthGif"
         app:layout_constraintVertical_bias="0.284" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/earthCenterFloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="onClickHorizontal"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/earthGif"
+        app:layout_constraintEnd_toEndOf="@+id/earthGif"
+        app:layout_constraintStart_toStartOf="@+id/earthGif"
+        app:layout_constraintTop_toTopOf="@+id/earthGif"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/moonCenterFloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="onClickHorizontal"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/earthGif"
+        app:layout_constraintEnd_toEndOf="@+id/moonGif"
+        app:layout_constraintStart_toStartOf="@+id/moonGif"
+        app:layout_constraintTop_toTopOf="@+id/moonGif"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/earthRightFloat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:clickable="true"
+        android:onClick="onClickHorizontal"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/earthGif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toEndOf="@+id/earthCenterFloat"
+        app:layout_constraintTop_toTopOf="@+id/earthGif"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <ImageView
+        android:id="@+id/verticalLine"
+        android:layout_width="31dp"
+        android:layout_height="477dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/earthCenterFloat"
+        app:layout_constraintEnd_toEndOf="@+id/earthGif"
+        app:layout_constraintStart_toStartOf="@+id/earthGif"
+        app:layout_constraintTop_toTopOf="@+id/moonCenterFloat"
+        app:srcCompat="@drawable/linetwo" />
+
+    <ImageView
+        android:id="@+id/horizontalLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/earthGif"
+        app:layout_constraintEnd_toEndOf="@+id/earthRightFloat2"
+        app:layout_constraintStart_toStartOf="@+id/earthCenterFloat"
+        app:layout_constraintTop_toTopOf="@+id/earthGif"
+        app:srcCompat="@drawable/horizontalline" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
