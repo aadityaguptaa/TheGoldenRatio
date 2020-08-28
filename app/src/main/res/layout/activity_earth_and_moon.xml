@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:onClick="onClickHorizontal"
+        android:visibility="invisible"
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/earthGif"
         app:layout_constraintEnd_toEndOf="@+id/earthGif"
@@ -83,6 +84,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:onClick="onClickHorizontal"
+        android:visibility="invisible"
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/earthGif"
         app:layout_constraintEnd_toEndOf="@+id/moonGif"
@@ -97,6 +99,7 @@
         android:layout_marginEnd="11dp"
         android:clickable="true"
         android:onClick="onClickHorizontal"
+        android:visibility="invisible"
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/earthGif"
         app:layout_constraintEnd_toEndOf="parent"
@@ -231,6 +234,20 @@
         app:layout_constraintStart_toStartOf="@+id/earthGif"
         app:layout_constraintTop_toTopOf="@+id/moonCenterFloat"
         app:layout_constraintVertical_bias="0.289" />
+
+    <com.example.thegoldenratio.TypeWriter
+        android:id="@+id/hypoTextDisc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="568dp"
+        android:fontFamily="@font/f1"
+        android:paddingLeft="30dp"
+        android:textColor="#65B651"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/earthAndMoonDist"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
