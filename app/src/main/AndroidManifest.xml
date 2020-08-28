@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".EarthAndMoon"></activity>
+        <activity android:name=".Saturn"></activity>
+        <activity android:name=".EarthAndMoon" />
         <activity android:name=".TheGoldenRuler" />
         <activity android:name=".faceRecognition" />
         <activity android:name=".MainActivity">
