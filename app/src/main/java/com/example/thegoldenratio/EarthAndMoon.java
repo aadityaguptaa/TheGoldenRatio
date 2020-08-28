@@ -3,6 +3,7 @@ package com.example.thegoldenratio;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -65,9 +66,32 @@ public class EarthAndMoon extends AppCompatActivity {
     public void onClickHorizontal(View view){
         verticalsButtonsCount+=1;
         if(verticalsButtonsCount == 2){
-            verticalLine.setVisibility(View.VISIBLE);
-        }else if(verticalsButtonsCount == 3){
             horizontalLine.setVisibility(View.VISIBLE);
+            TextView re = findViewById(R.id.Re);
+            re.setVisibility(View.VISIBLE);
+            TypeWriter earthRadius = findViewById(R.id.earthRadius);
+            earthRadius.setCharacterDelay(75);
+            earthRadius.animateText("-> Let the radius of the Earth be 1");
+            Utils.delay(5, () -> {
+                TypeWriter moonRadius = findViewById(R.id.moonRadius);
+                moonRadius.setCharacterDelay(75);
+                moonRadius.animateText("-> Ratio of radius of Earth and Moon is 1 : 0.272");
+                Utils.delay(6, () -> {
+                    moonRadius.animateText("-> i.e. Rm = 0.272 ");
+                });
+            });
+        }else if(verticalsButtonsCount == 4){
+            verticalLine.setVisibility(View.VISIBLE);
+            TextView rem = findViewById(R.id.rem);
+            rem.setVisibility(View.VISIBLE);
+            TypeWriter earthMoonDist = findViewById(R.id.earthAndMoonDist);
+            earthMoonDist.setCharacterDelay(75);
+            earthMoonDist.animateText("-> Re + Rm = 1.272 ");
+        }else if(verticalsButtonsCount == 6){
+            ImageView earthMoonHypo = findViewById(R.id.earthMoonHypo);
+            TextView remh = findViewById(R.id.remh);
+            remh.setVisibility(View.VISIBLE);
+            earthMoonHypo.setVisibility(View.VISIBLE);
         }
     }
 }
