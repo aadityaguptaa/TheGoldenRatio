@@ -13,6 +13,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class EarthAndMoon extends AppCompatActivity {
     private int verticalsButtonsCount = 0;
+    //Declaring Global Views
     ImageView verticalLine;
     ImageView horizontalLine;
     GifImageView earthView;
@@ -28,17 +29,21 @@ public class EarthAndMoon extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_earth_and_moon);
+        //Initializing View
         verticalLine = findViewById(R.id.verticalLine);
         horizontalLine = findViewById(R.id.horizontalLine);
         earthView = findViewById(R.id.earthGif);
         moonView = findViewById(R.id.moonGif);
 
+        //to set the height and width of perpendicular and vertical line
         float earthViewHeight = earthView.getHeight();
         float earthViewWidth = earthView.getWidth();
         float moonViewHeight = moonView.getHeight();
 
         verticalLine.getLayoutParams().height = (int) ((earthViewHeight/2) + (moonViewHeight/2));
         horizontalLine.getLayoutParams().width = (int)(earthViewWidth/2);
+
+        //initialize strings to be used in bottom textView
         final String[] st = new String[6];
         st[0] = "Did you know??";
         st[1] = "The dimensions of the Earth and Moon are in Phi relationship, forming a Triangle based on 1.618.";
@@ -47,12 +52,12 @@ public class EarthAndMoon extends AppCompatActivity {
         st[4] = "first, let us draw the radius of earth";
         st[5] = "tap on the plus signs visible";
 
-        //Add a character every 150ms
-         // Delay in seconds
         mainone = findViewById(R.id.typeWriter);
+        //Add a character every 75ms
         mainone.setCharacterDelay(75);
         mainone.animateText(st[0]);
 
+        //This is all the animations for bottom most text view
         Utils.delay(3, new Utils.DelayCallback() {
             @Override
             public void afterDelay() {
@@ -89,6 +94,8 @@ public class EarthAndMoon extends AppCompatActivity {
         });
 
     }
+
+    //function called when user clicks on a float button
     public void onClickHorizontal(View view){
         verticalsButtonsCount+=1;
         if(verticalsButtonsCount == 2){
@@ -132,7 +139,7 @@ public class EarthAndMoon extends AppCompatActivity {
                         mainone.animateText("tap on the signs visible");
                     });
                 });
-            
+
         }else if(verticalsButtonsCount == 6){
             ImageView earthMoonHypo = findViewById(R.id.earthMoonHypo);
             TextView remh = findViewById(R.id.remh);
