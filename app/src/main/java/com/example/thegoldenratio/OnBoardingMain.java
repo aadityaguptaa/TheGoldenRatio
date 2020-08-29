@@ -62,9 +62,9 @@ public class OnBoardingMain extends AppCompatActivity {
 
     public void addDotsIndicator(int position2){
         linearLayout.removeAllViews();
-        mDots = new TextView[3];
+        mDots = new TextView[8];
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < mDots.length; i++){
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226"));
             mDots[i].setTextSize(35);
