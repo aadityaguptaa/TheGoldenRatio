@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/ic_baseline_add_24" />
 
     <com.munon.turboimageview.TurboImageView
-        android:id="@+id/turboImageView"
+        android:id="@+id/turboImageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="@+id/rulerCameraView"

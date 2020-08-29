@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Button mainActivityButton = findViewById(R.id.mainActivityButton);
         Button theGoldeGridButton = findViewById(R.id.TheGoldenGridButton);
         Button earthAndMoon = findViewById(R.id.earthAndMoonButton);
+        Button saturnButton = findViewById(R.id.saturnButton);
 
 
         //starts faceRecognition Intent
@@ -42,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent EarthAndMoon = new Intent(MainActivity.this, EarthAndMoon.class);
                 startActivity(EarthAndMoon);
+            }
+        });
+
+        //starts EarthAndMoon Activity
+        saturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Saturn = new Intent(MainActivity.this, Saturn.class);
+                startActivity(Saturn);
             }
         });
     }

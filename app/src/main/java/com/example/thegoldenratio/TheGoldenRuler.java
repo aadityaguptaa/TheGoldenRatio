@@ -48,7 +48,7 @@ public class TheGoldenRuler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_golden_ruler);
-        TurboImageView turboImageView = findViewById(R.id.turboImageView);
+        TurboImageView turboImageView = findViewById(R.id.turboImageView2);
         turboImageView.addObject(this, R.drawable.goldenuler1);
 
 
