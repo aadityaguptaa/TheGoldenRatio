@@ -47,7 +47,7 @@ public class OnBoardingMain extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 viewPager2.setCurrentItem(mCurrentInt + 1);
-                
+
             }
         });
         mPrevButton.setOnClickListener(new View.OnClickListener() {

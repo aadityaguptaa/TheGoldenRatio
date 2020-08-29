@@ -6,61 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/mainActivityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="faceRec"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/onboardingbackground" />
 
-    <Button
-        android:id="@+id/TheGoldenGridButton"
+    <TextView
+        android:id="@+id/TheDivineProportion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TheGoldenGrid"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="136dp"
+        android:fontFamily="@font/ruslan_display"
+        android:text="The Divine Proportion"
+        android:textColor="#E81616"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainActivityButton"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
-    <Button
-        android:id="@+id/earthAndMoonButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Earth and moon"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="318dp"
+        android:layout_height="313dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TheGoldenGridButton"
-        app:layout_constraintVertical_bias="0.051" />
-
-    <Button
-        android:id="@+id/saturnButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SATURN"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/earthAndMoonButton"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/introButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="intro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saturnButton"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.631"
+        app:srcCompat="@drawable/butterflytwofinal" />
 </androidx.constraintlayout.widget.ConstraintLayout>
