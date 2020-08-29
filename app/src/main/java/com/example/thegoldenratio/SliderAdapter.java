@@ -22,17 +22,20 @@ public class SliderAdapter extends PagerAdapter {
 
     public  int[] slide_images = {
             R.drawable.horizontalline,
+            R.drawable.goldenline,
             R.drawable.goldenline
     };
 
     public String[] head_lines = {
       "Eat",
-      "Code"
+      "Code",
+            "Repeat"
     };
 
     public String[] slide_desc = {
       "sjfbsakdbvbashjvbasd f aydf akdhf aeyf ad",
-      "skdjhfbjsahd ksdjhafba sdvs vjhasbv sa iuhf sadbksd kasd klasdjfbhk asdbv ksafj ewuif k"
+      "skdjhfbjsahd ksdjhafba sdvs vjhasbv sa iuhf sadbksd kasd klasdjfbhk asdbv ksafj ewuif k",
+            "hjsfbs sajkvas skhdafwubfsd  scsjvnkalsdna eiuehriewfnadj lsajnvklandvaoi jdanfkln oewhfwnfdj"
     };
 
     @Override
