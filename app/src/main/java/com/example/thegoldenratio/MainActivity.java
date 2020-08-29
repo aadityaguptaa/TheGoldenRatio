@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Utils.delay(6, () -> {
-            Intent intent = new Intent(MainActivity.this, Intro.class);
+        Utils.delay(5, () -> {
+            Intent intent = new Intent(MainActivity.this, OnBoardingMain.class);
             startActivity(intent);
         });
     }

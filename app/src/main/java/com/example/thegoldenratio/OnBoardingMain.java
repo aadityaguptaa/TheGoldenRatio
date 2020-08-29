@@ -1,5 +1,6 @@
 package com.example.thegoldenratio;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
@@ -46,7 +47,12 @@ public class OnBoardingMain extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(mCurrentInt == 7){
+                    Intent intro = new Intent(OnBoardingMain.this, Intro.class);
+                    startActivity(intro);
+                }
                 viewPager2.setCurrentItem(mCurrentInt + 1);
+
 
             }
         });
