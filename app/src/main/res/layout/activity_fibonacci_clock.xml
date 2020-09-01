@@ -6,4 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".FibonacciClock">
 
+    <ImageView
+        android:id="@+id/fivebyfive"
+        android:background="#e0e0e0e0"
+        android:layout_width="408dp"
+        android:layout_height="454dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:color/transparent"/>
+
+    <ImageView
+        android:id="@+id/threebythree"
+        android:layout_width="190dp"
+        android:background="#e0e0e0e0"
+        android:layout_height="274dp"
+        app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/transparent"/>
+
+    <ImageView
+        android:id="@+id/twobytwo"
+        android:background="#e0e0e0e0"
+        android:layout_width="222dp"
+        android:layout_height="127dp"
+        app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/threebythree"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.013"
+        app:srcCompat="@android:color/transparent"/>
+
+    <ImageView
+        android:id="@+id/onebyone"
+        android:background="#e0e0e0e0"
+        android:layout_width="102dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fivebyfive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintStart_toStartOf="@+id/threebythree"
+        app:layout_constraintTop_toBottomOf="@+id/twobytwo"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:color/transparent"/>
+
+    <ImageView
+        android:id="@+id/onebyonetwo"
+        android:background="#e0e0e0e0"
+        android:layout_width="113dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
+        app:layout_constraintEnd_toEndOf="@+id/fivebyfive"
+        app:layout_constraintStart_toEndOf="@+id/onebyone"
+        app:layout_constraintTop_toBottomOf="@+id/twobytwo"
+        app:srcCompat="@android:color/transparent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

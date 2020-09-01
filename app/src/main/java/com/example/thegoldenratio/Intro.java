@@ -18,6 +18,8 @@ public class Intro extends AppCompatActivity {
         Button earthAndMoon = findViewById(R.id.earthAndMoonButton);
         Button saturnButton = findViewById(R.id.saturnButton);
         Button introButton = findViewById(R.id.introButton);
+        Button fibclkButton = findViewById(R.id.fibonacciclock);
+
 
 
         //starts faceRecognition Intent
@@ -61,6 +63,14 @@ public class Intro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intro = new Intent(Intro.this, OnBoardingMain.class);
+                startActivity(intro);
+            }
+        });
+
+        fibclkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intro = new Intent(Intro.this, FibonacciClock.class);
                 startActivity(intro);
             }
         });
