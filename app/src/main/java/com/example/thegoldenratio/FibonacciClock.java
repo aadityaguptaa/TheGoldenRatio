@@ -22,6 +22,7 @@ public class FibonacciClock extends AppCompatActivity {
         setContentView(R.layout.activity_fibonacci_clock);
 
 
+
         firstRun();
 
         Timer timer = new Timer();
@@ -88,6 +89,24 @@ public class FibonacciClock extends AppCompatActivity {
     }
 
     public void firstRun() {
+
+        TypeWriter hourtw = findViewById(R.id.hourtw);
+        TypeWriter minutetw = findViewById(R.id.minutetw);
+        TypeWriter ignoretw = findViewById(R.id.ignoretw);
+        minutetw.setCharacterDelay(75);
+        ignoretw.setCharacterDelay(75);
+        hourtw.setCharacterDelay(75);
+        hourtw.animateText("Here we have for you the Fibonacci Clock");
+
+        Utils.delay(5, () -> {
+            hourtw.animateText("Hour = Sum of Fibonacci Numbers of blue and red boxes");
+            Utils.delay(6, () -> {
+                minutetw.animateText("Minutes = Sum of Fibonacci Numbers of blue and green boxes * 5 ");
+                Utils.delay(9, () -> {
+                    ignoretw.animateText("Ignore white boxes :)");
+                });
+            });
+        });
         Calendar c = Calendar.getInstance();                                                        // new object of type Calendar
         hour = c.get(Calendar.HOUR);                                                                // get hour (in 24-HR format) in int
         min = c.get(Calendar.MINUTE);                                                               // get minute in int

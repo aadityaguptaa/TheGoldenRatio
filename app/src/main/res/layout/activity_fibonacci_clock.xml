@@ -78,4 +78,48 @@
         app:layout_constraintStart_toEndOf="@+id/onebyone"
         app:layout_constraintTop_toBottomOf="@+id/twobytwo"
         app:layout_constraintVertical_bias="0.833" />
+
+    <com.example.thegoldenratio.TypeWriter
+        android:id="@+id/hourtw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/open_sans"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#FF37CFC1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.thegoldenratio.TypeWriter
+        android:id="@+id/minutetw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#FF37CFC1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hourtw" />
+
+    <com.example.thegoldenratio.TypeWriter
+        android:id="@+id/ignoretw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#37CFC1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/threebythree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minutetw"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
