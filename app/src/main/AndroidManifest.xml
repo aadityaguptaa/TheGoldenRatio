@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Intro"></activity>
+        <activity android:name=".FibonacciClock"></activity>
+        <activity android:name=".Intro" />
         <activity android:name=".OnBoardingMain" />
         <activity android:name=".Saturn" />
         <activity android:name=".EarthAndMoon" />
