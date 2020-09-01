@@ -8,61 +8,74 @@
 
     <ImageView
         android:id="@+id/fivebyfive"
-        android:background="#e0e0e0e0"
-        android:layout_width="408dp"
-        android:layout_height="454dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#e0e0e0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:color/transparent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/threebythree"
-        android:layout_width="190dp"
-        android:background="#e0e0e0e0"
-        android:layout_height="274dp"
+        android:layout_width="210dp"
+
+        android:layout_height="210dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#e0e0e0"
         app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/fivebyfive"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/transparent"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/twobytwo"
-        android:background="#e0e0e0e0"
-        android:layout_width="222dp"
-        android:layout_height="127dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="5dp"
+
+        android:layout_marginEnd="5dp"
+        android:background="#e0e0e0"
         app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/threebythree"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.013"
-        app:srcCompat="@android:color/transparent"/>
+        app:layout_constraintTop_toTopOf="@+id/threebythree"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/onebyone"
-        android:background="#e0e0e0e0"
-        android:layout_width="102dp"
-        android:layout_height="135dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fivebyfive"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
-        app:layout_constraintStart_toStartOf="@+id/threebythree"
-        app:layout_constraintTop_toBottomOf="@+id/twobytwo"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:color/transparent"/>
+        android:layout_width="70dp"
+
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="3dp"
+        android:background="#e0e0e0"
+        app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
+        app:layout_constraintStart_toEndOf="@+id/threebythree"
+        app:layout_constraintTop_toBottomOf="@+id/twobytwo" />
 
     <ImageView
         android:id="@+id/onebyonetwo"
-        android:background="#e0e0e0e0"
-        android:layout_width="113dp"
-        android:layout_height="135dp"
+        android:layout_width="70dp"
+
+        android:layout_height="70dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="3dp"
+        android:background="#e0e0e0"
         app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
-        app:layout_constraintEnd_toEndOf="@+id/fivebyfive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/onebyone"
         app:layout_constraintTop_toBottomOf="@+id/twobytwo"
-        app:srcCompat="@android:color/transparent"/>
-
+        app:layout_constraintVertical_bias="0.833" />
 </androidx.constraintlayout.widget.ConstraintLayout>

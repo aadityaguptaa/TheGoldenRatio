@@ -21,6 +21,7 @@ public class FibonacciClock extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fibonacci_clock);
 
+
         firstRun();
 
         Timer timer = new Timer();
@@ -124,11 +125,11 @@ public class FibonacciClock extends AppCompatActivity {
     public void imageChange()                                                                       // change images in preview
     {
 
-        ImageView box5x5 = (ImageView) findViewById(R.id.fivebyfive);                               // initialise box5x5 object of type ImageView, corresponding image is imageView3
-        ImageView box3x3 = (ImageView) findViewById(R.id.threebythree);                               // initialise box3x3 object of type ImageView, corresponding image is imageView4
-        ImageView box2x2 = (ImageView) findViewById(R.id.twobytwo);                               // initialise box2x2 object of type ImageView, corresponding image is imageView5
-        ImageView box1x1a = (ImageView) findViewById(R.id.onebyone);                              // initialise box1x1a object of type ImageView, corresponding image is imageView7
-        ImageView box1x1b = (ImageView) findViewById(R.id.onebyonetwo);                              // initialise box1x1b object of type ImageView, corresponding image is imageView36
+        ImageView box5x5 = (ImageView) findViewById(R.id.fivebyfive);                               // initialise box5x5 object of type ImageView, corresponding image is fivebyfive
+        ImageView box3x3 = (ImageView) findViewById(R.id.threebythree);                               // initialise box3x3 object of type ImageView, corresponding image is threebythree
+        ImageView box2x2 = (ImageView) findViewById(R.id.twobytwo);                               // initialise box2x2 object of type ImageView, corresponding image is twobytwo
+        ImageView box1x1a = (ImageView) findViewById(R.id.onebyone);                              // initialise box1x1a object of type ImageView, corresponding image is onebyone
+        ImageView box1x1b = (ImageView) findViewById(R.id.onebyonetwo);                              // initialise box1x1b object of type ImageView, corresponding image is onebyonetwo
 
         box5x5.setImageResource(android.R.color.transparent);                                       // initialise all boxes to transparent colour
         box3x3.setImageResource(android.R.color.transparent);
@@ -139,47 +140,47 @@ public class FibonacciClock extends AppCompatActivity {
         // 5x5 box                                                                                  // 5x5 box
 
         if (hourFlag[0] == 1 && minFlag[0] == 1)                                                    // if both hour and min have a factor of 5
-            box5x5.setImageResource(android.R.color.holo_blue_light);                               // then display blue
+            box5x5.setImageResource(android.R.color.holo_blue_dark);                               // then display blue
         else if (hourFlag[0] == 1)                                                                  // if hour has a factor of 5
-            box5x5.setImageResource(android.R.color.holo_red_light);                                // then display red
+            box5x5.setImageResource(android.R.color.holo_red_dark);                                // then display red
         else if (minFlag[0] == 1)                                                                   // if min has a factor of 5
-            box5x5.setImageResource(android.R.color.holo_green_light);                              // then display green
+            box5x5.setImageResource(android.R.color.holo_green_dark);                              // then display green
 
         // 3x3 box                                                                                  // 3x3 box
 
         if (hourFlag[1] == 1 && minFlag[1] == 1)                                                    // if both hour and min have a factor of 3
-            box3x3.setImageResource(android.R.color.holo_blue_light);                               // then display blue
+            box3x3.setImageResource(android.R.color.holo_blue_dark);                               // then display blue
         else if (hourFlag[1] == 1)                                                                  // if hour has a factor of 3
-            box3x3.setImageResource(android.R.color.holo_red_light);                                // then display red
+            box3x3.setImageResource(android.R.color.holo_red_dark);                                // then display red
         else if (minFlag[1] == 1)                                                                   // if min has a factor of 3
-            box3x3.setImageResource(android.R.color.holo_green_light);                              // then display green
+            box3x3.setImageResource(android.R.color.holo_green_dark);                              // then display green
 
         // 2x2 box                                                                                  // 2x2 box
 
         if (hourFlag[2] == 1 && minFlag[2] == 1)                                                    // if both hour and min have a factor of 2
-            box2x2.setImageResource(android.R.color.holo_blue_light);                               // then display blue
+            box2x2.setImageResource(android.R.color.holo_blue_dark);                               // then display blue
         else if (hourFlag[2] == 1)                                                                  // if hour has a factor of 2
-            box2x2.setImageResource(android.R.color.holo_red_light);                                // then display red
+            box2x2.setImageResource(android.R.color.holo_red_dark);                                // then display red
         else if (minFlag[2] == 1)                                                                   // if min has a factor of 2
-            box2x2.setImageResource(android.R.color.holo_green_light);                              // then display green
+            box2x2.setImageResource(android.R.color.holo_green_dark);                              // then display green
 
         // 1x1a box                                                                                 // 1x1a box
 
         if (hourFlag[3] == 1 && minFlag[3] == 1)                                                    // if both hour and min have a factor of 1
-            box1x1a.setImageResource(android.R.color.holo_blue_light);                              // then display blue
+            box1x1a.setImageResource(android.R.color.holo_blue_dark);                              // then display blue
         else if (hourFlag[3] == 1)                                                                  // if hour has a factor of 1
-            box1x1a.setImageResource(android.R.color.holo_red_light);                               // then display red
+            box1x1a.setImageResource(android.R.color.holo_red_dark);                               // then display red
         else if (minFlag[3] == 1)                                                                   // if min has a factor of 1
-            box1x1a.setImageResource(android.R.color.holo_green_light);                             // then display green
+            box1x1a.setImageResource(android.R.color.holo_green_dark);                             // then display green
 
         // 1x1b box                                                                                 // 1x1b box
 
         if (hourFlag[4] == 1 && minFlag[4] == 1)                                                    // if both hour and min have a factor of 1
-            box1x1b.setImageResource(android.R.color.holo_blue_light);                              // then display blue
+            box1x1b.setImageResource(android.R.color.holo_blue_dark);                              // then display blue
         else if (hourFlag[4] == 1)                                                                  // if hour has a factor of 1
-            box1x1b.setImageResource(android.R.color.holo_red_light);                               // then display red
+            box1x1b.setImageResource(android.R.color.holo_red_dark);                               // then display red
         else if (minFlag[4] == 1)                                                                   // if min has a factor of 1
-            box1x1b.setImageResource(android.R.color.holo_green_light);                             // then display green
+            box1x1b.setImageResource(android.R.color.holo_green_dark);                             // then display green
 
     }
 
