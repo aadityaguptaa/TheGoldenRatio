@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".FibonacciClock">
 
     <ImageView
@@ -20,12 +21,12 @@
 
     <ImageView
         android:id="@+id/threebythree"
-        android:layout_width="210dp"
+        android:layout_width="203dp"
 
-        android:layout_height="210dp"
+        android:layout_height="208dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="7dp"
         android:background="#e0e0e0"
         app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +38,8 @@
     <ImageView
         android:id="@+id/twobytwo"
         android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="5dp"
+        android:layout_height="134dp"
+        android:layout_marginStart="7dp"
 
         android:layout_marginEnd="5dp"
         android:background="#e0e0e0"
@@ -53,28 +54,26 @@
         android:id="@+id/onebyone"
         android:layout_width="70dp"
 
-        android:layout_height="70dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="3dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
         android:background="#e0e0e0"
         app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
         app:layout_constraintStart_toEndOf="@+id/threebythree"
-        app:layout_constraintTop_toBottomOf="@+id/twobytwo" />
+        app:layout_constraintTop_toBottomOf="@+id/twobytwo"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/onebyonetwo"
-        android:layout_width="70dp"
+        android:layout_width="64dp"
 
-        android:layout_height="70dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="3dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
         android:background="#e0e0e0"
         app:layout_constraintBottom_toTopOf="@+id/fivebyfive"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/onebyone"
         app:layout_constraintTop_toBottomOf="@+id/twobytwo"
         app:layout_constraintVertical_bias="0.833" />
@@ -84,9 +83,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:fontFamily="@font/open_sans"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:fontFamily="@font/f1"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:textColor="#FF37CFC1"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,9 +97,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/open_sans"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:fontFamily="@font/f1"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:textColor="#FF37CFC1"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,9 +111,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/open_sans"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:fontFamily="@font/f1"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:textColor="#37CFC1"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/threebythree"
@@ -122,4 +121,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/minutetw"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/fivebyfive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fivebyfive" />
+
+    <TextView
+        android:id="@+id/three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/threebythree"
+        app:layout_constraintEnd_toEndOf="@+id/threebythree"
+        app:layout_constraintStart_toStartOf="@+id/threebythree"
+        app:layout_constraintTop_toTopOf="@+id/threebythree" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/twobytwo"
+        app:layout_constraintEnd_toEndOf="@+id/twobytwo"
+        app:layout_constraintStart_toStartOf="@+id/twobytwo"
+        app:layout_constraintTop_toTopOf="@+id/twobytwo" />
+
+    <TextView
+        android:id="@+id/oneone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/onebyonetwo"
+        app:layout_constraintEnd_toEndOf="@+id/onebyonetwo"
+        app:layout_constraintStart_toStartOf="@+id/onebyonetwo"
+        app:layout_constraintTop_toTopOf="@+id/onebyonetwo" />
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/onebyone"
+        app:layout_constraintEnd_toEndOf="@+id/onebyone"
+        app:layout_constraintStart_toStartOf="@+id/onebyone"
+        app:layout_constraintTop_toTopOf="@+id/onebyone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
