@@ -3,6 +3,7 @@ package com.example.thegoldenratio;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,9 +37,17 @@ public class GoldenRatioCalculator extends AppCompatActivity {
         EditText apb = findViewById(R.id.editTextNumberAplusB);
 
         if(v.getId() == aid){
+            if(a.getText().toString().isEmpty()){
+                Toast.makeText(GoldenRatioCalculator.this, "Invalid Number", Toast.LENGTH_SHORT);
+                return;
+            }
             b.setText(df.format(Double.parseDouble(a.getText().toString())/1.618));
             apb.setText(df.format(Double.parseDouble(a.getText().toString()) + Double.parseDouble(b.getText().toString())));
         }else if(v.getId() == bid){
+            if(b.getText().toString().isEmpty()){
+                Toast.makeText(GoldenRatioCalculator.this, "Invalid Number", Toast.LENGTH_SHORT);
+                return;
+            }
             a.setText(df.format(Double.parseDouble(b.getText().toString())*1.618));
             apb.setText(df.format(Double.parseDouble(a.getText().toString()) + Double.parseDouble(b.getText().toString())));
         }
