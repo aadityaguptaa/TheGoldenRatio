@@ -20,6 +20,8 @@ public class Intro extends AppCompatActivity {
         Button introButton = findViewById(R.id.introButton);
         Button fibclkButton = findViewById(R.id.fibonacciclock);
         Button ratioCalculatorButton = findViewById(R.id.ratioCalculator);
+        Button theMenuButton = findViewById(R.id.theMenu);
+
 
 
 
@@ -81,6 +83,14 @@ public class Intro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intro = new Intent(Intro.this, GoldenRatioCalculator.class);
+                startActivity(intro);
+            }
+        });
+
+        theMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intro = new Intent(Intro.this, TheMenu.class);
                 startActivity(intro);
             }
         });

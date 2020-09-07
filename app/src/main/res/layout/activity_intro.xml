@@ -83,5 +83,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fibonacciclock" />
 
+    <Button
+        android:id="@+id/theMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The menu"
+        app:layout_constraintBottom_toTopOf="@+id/mainActivityButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratioCalculator" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
