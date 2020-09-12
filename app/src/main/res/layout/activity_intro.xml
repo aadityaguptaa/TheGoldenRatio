@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <Button
-        android:id="@+id/saturnButton"
+        android:id="@+id/saturnLogoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SATURN"
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saturnButton"
+        app:layout_constraintTop_toBottomOf="@+id/saturnLogoButton"
         app:layout_constraintVertical_bias="0.055" />
 
     <Button

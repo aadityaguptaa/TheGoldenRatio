@@ -3,24 +3,24 @@ package com.example.thegoldenratio;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class Intro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
-        Button mainActivityButton = findViewById(R.id.mainActivityButton);
-        Button theGoldeGridButton = findViewById(R.id.TheGoldenGridButton);
-        Button earthAndMoon = findViewById(R.id.earthAndMoonButton);
-        Button saturnButton = findViewById(R.id.saturnButton);
-        Button introButton = findViewById(R.id.introButton);
-        Button fibclkButton = findViewById(R.id.fibonacciclock);
-        Button ratioCalculatorButton = findViewById(R.id.ratioCalculator);
-        Button theMenuButton = findViewById(R.id.theMenu);
+        setContentView(R.layout.menu_layout);
+        CardView mainActivityButton = findViewById(R.id.goldenFaceButton);
+        CardView theGoldeGridButton = findViewById(R.id.gridButton);
+        CardView earthAndMoon = findViewById(R.id.earthButton);
+        CardView saturnButton = findViewById(R.id.saturnLogoButton);
+        CardView introButton = findViewById(R.id.homeButton);
+        CardView fibclkButton = findViewById(R.id.fibonacciboxButton);
+        CardView ratioCalculatorButton = findViewById(R.id.calculatorButton);
+        CardView theMenuButton = findViewById(R.id.logoButton);
 
 
 
