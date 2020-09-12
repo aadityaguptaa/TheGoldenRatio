@@ -5,8 +5,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -24,15 +22,6 @@ public class TheMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_menu);
-
-        Button selectImage = findViewById(R.id.setectnew);
-
-        selectImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chooseImage();
-            }
-        });
 
     }
 

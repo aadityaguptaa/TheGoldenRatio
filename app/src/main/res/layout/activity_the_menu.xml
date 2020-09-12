@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:outlineProvider="none"
     tools:context=".TheMenu">
 
     <ImageView
         android:id="@+id/qwerty"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="602dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -19,86 +20,33 @@
         app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <com.nex3z.togglebuttongroup.MultiSelectToggleGroup
+        android:id="@+id/group_weekdays"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/qwerty"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qwerty"
+        app:layout_constraintVertical_bias="0.163"
+        app:tbgChildSpacing="auto">
 
-
-        <Button
-            android:id="@+id/setectnew"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
+        <com.nex3z.togglebuttongroup.button.CircularToggle
+            android:id="@+id/sun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:text="Button"
-            android:textColor="#000000" />
+            android:text="S" />
 
-        <Button
-            android:id="@+id/button2"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
+        <com.nex3z.togglebuttongroup.button.CircularToggle
+            android:id="@+id/mon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:textColor="#000000"
-            android:text="Button" />
+            android:text="M" />
 
-        <Button
-            android:id="@+id/button3"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:textColor="#000000"
-            android:text="Button" />
+        <!--...-->
 
-        <Button
-            android:id="@+id/button4"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:textColor="#000000"
-            android:text="Button" />
+    </com.nex3z.togglebuttongroup.MultiSelectToggleGroup>
 
-        <Button
-            android:id="@+id/button5"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:textColor="#000000"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button6"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:textColor="#000000"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button7"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:textColor="#000000"
-            android:text="Button" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

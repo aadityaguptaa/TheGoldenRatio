@@ -90,7 +90,7 @@ public class Intro extends AppCompatActivity {
         theMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intro = new Intent(Intro.this, TheMenu.class);
+                Intent intro = new Intent(Intro.this, Logos.class);
                 startActivity(intro);
             }
         });
