@@ -11,7 +11,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,14 +56,21 @@ public class TheGoldenRuler extends AppCompatActivity {
                     Manifest.permission.CAMERA
             }, 100);
         }
+        Utils.delay(5, () -> {
+            ImageView dragThisArrow = findViewById(R.id.dragThisArrow);
+            dragThisArrow.setVisibility(View.INVISIBLE);
+
+        });
         ImageView cameraClick = findViewById(R.id.rulerFloatButton);
         cameraClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ImageView dragThisArrow = findViewById(R.id.dragThisArrow);
-                TextView dragThisText = findViewById(R.id.dragCenterText);
+
                 dragThisArrow.setVisibility(View.INVISIBLE);
-                dragThisText.setVisibility(View.INVISIBLE);
+                ImageView fjghskfd = findViewById(R.id.gridimageview);
+                fjghskfd.setVisibility(View.INVISIBLE);
+
                 String fileName = "photo";
                 File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
                 try{
@@ -80,6 +86,4 @@ public class TheGoldenRuler extends AppCompatActivity {
             }
         });
     }
-
-
 }
