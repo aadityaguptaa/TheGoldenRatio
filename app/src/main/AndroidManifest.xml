@@ -19,16 +19,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".Logos"></activity>
-        <activity android:name=".TheMenu" />
-        <activity android:name=".GoldenRatioCalculator" />
-        <activity android:name=".FibonacciClock" />
-        <activity android:name=".Intro" />
-        <activity android:name=".OnBoardingMain" />
-        <activity android:name=".Saturn" />
-        <activity android:name=".EarthAndMoon" />
-        <activity android:name=".TheGoldenRuler" />
-        <activity android:name=".faceRecognition" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".TheMenu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GoldenRatioCalculator"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FibonacciClock"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Intro"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".OnBoardingMain"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Saturn"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EarthAndMoon"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TheGoldenRuler"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".faceRecognition"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

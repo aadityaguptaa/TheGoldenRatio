@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#14598F"
+    android:background="@drawable/bg"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".Intro">
@@ -19,9 +19,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:fontFamily="cursive"
             android:text="The Golden Ratio"
-            android:textColor="#000"
-            android:textSize="34sp" />
+            android:textColor="#9A9999"
+            android:textSize="36sp" />
 
     </RelativeLayout>
 
@@ -50,8 +51,8 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:alwaysDrawnWithCache="true"
-            android:background="#B71C1C"
-            android:backgroundTint="#5277A1"
+            android:background="@drawable/backgroundtexture"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -92,7 +93,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5277A1"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -107,12 +108,13 @@
                     android:layout_width="139dp"
                     android:layout_height="71dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/facegoldenratio" />
+                    android:src="@drawable/facegoldenrec"
+                     />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Face Rect"
+                    android:text="Face Rectangle"
                     android:textAlignment="center"
                     android:textColor="#000"
                     android:textSize="14sp"
@@ -135,7 +137,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5277A1"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -176,7 +178,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5277A1"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -219,7 +221,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5277A1"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -239,7 +241,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Logo"
+                    android:text="Logos"
                     android:textAlignment="center"
                     android:textColor="#000"
                     android:textSize="14sp"
@@ -260,7 +262,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5277A1"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -299,7 +301,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5277A1"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -319,7 +321,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Text"
+                    android:text="Calculator"
                     android:textAlignment="center"
                     android:textColor="#000"
                     android:textSize="14sp"
@@ -338,7 +340,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#5277A1"
+            android:backgroundTint="#6BFFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
