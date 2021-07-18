@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.thegoldenratio.facerecognition.faceRecognition;
+
 public class Intro extends AppCompatActivity {
 
     @Override
