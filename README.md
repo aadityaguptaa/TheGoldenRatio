@@ -1,4 +1,4 @@
-**The Divine Proportion(Golden Ratio)** is based on the ratio of one object to another as defined by the number **1.618**. Use of the Divine Proportion is all around us, and is the tool used by artists and sculptors to achieve remarkably accurate proportion and aesthetic composition. The extremely popular book and film, The Da Vinci Code, made mention of the Divine Proportion with regard to **Leonardo da Vinci**’s use of it in several of his paintings. It has been suggested that Leonardo made deliberate use of the Divine Proportion in almost every aspect of his work including such paintings as the **Mona Lisa** and The Last Supper. Throughout history, however, it has been speculated that the golden ratio is prevalent in every aspect of our universe—from the natural growth pattern of the nautilus seashell to the pyramids of Egypt to the musical compositions of Mozart and Beethoven.
+**The Divine Proportion(Golden Ratio)** is based on the ratio of one object to another as defined by the number **1.618**. The use of the Divine Proportion is all around us and is the tool used by artists and sculptors to achieve remarkably accurate proportion and aesthetic composition. The extremely popular book and film, The Da Vinci Code, made mention of the Divine Proportion about **Leonardo da Vinci**’s use of it in several of his paintings. It has been suggested that Leonardo made deliberate use of the Divine Proportion in almost every aspect of his work including such paintings as the **Mona Lisa** and The Last Supper. Throughout history, however, it has been speculated that the golden ratio is prevalent in every aspect of our universe—from the natural growth pattern of the nautilus seashell to the pyramids of Egypt to the musical compositions of Mozart and Beethoven.
 
 <p align="center">
 <img src="https://github.com/aadityaguptaa/TheGoldenRatio/blob/master/theDivineProportion.jpeg" alt="drawing" width="200"/>
@@ -33,9 +33,9 @@ The Home Layout:
 <img src="https://github.com/aadityaguptaa/TheGoldenRatio/blob/master/facerec0.jpeg" alt="drawing" width="200"/>     <img src="https://github.com/aadityaguptaa/TheGoldenRatio/blob/master/facerec1.jpeg" alt="drawing" width="200"/> <img src="https://github.com/aadityaguptaa/TheGoldenRatio/blob/master/facerec2.jpeg" alt="drawing" width="200"/> <img src="https://github.com/aadityaguptaa/TheGoldenRatio/blob/master/facerec3.jpeg" alt="drawing" width="200"/> <img src="https://github.com/aadityaguptaa/TheGoldenRatio/blob/master/facerec4.jpeg" alt="drawing" width="200"/> 
    </p>
 
-*2.The fibonacci clock: A clock which displays time using fibonacci sequence and golden ratio.*
+*2.The Fibonacci clock: A clock that displays time using a Fibonacci sequence and golden ratio.*
   
-  For more Info: https://www.instructables.com/The-Fibonacci-Clock/
+  For more info: https://www.instructables.com/The-Fibonacci-Clock/
   
   
   <p align="center">
@@ -43,7 +43,7 @@ The Home Layout:
    </p>
 
 
-*3. there are activities where you have to drag and drop to find golden ratio in different objects.*
+*3. Activities where you have to drag and drop to find golden ratios in different objects.*
 
 <p align="center">
 <img src="https://github.com/aadityaguptaa/TheGoldenRatio/blob/master/earthandmoon.jpeg" alt="drawing" width="200"/>     
