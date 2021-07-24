@@ -18,12 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".Logos"></activity>
+        <activity android:name=".logos.Logos"></activity>
         <activity android:name=".TheMenu"
             android:screenOrientation="portrait"/>
-        <activity android:name=".GoldenRatioCalculator"
+        <activity android:name=".ratioCalculator.GoldenRatioCalculator"
             android:screenOrientation="portrait"/>
-        <activity android:name=".FibonacciClock"
+        <activity android:name=".fibonacciClock.FibonacciClock"
             android:screenOrientation="portrait"/>
         <activity android:name=".Intro"
             android:screenOrientation="portrait"/>

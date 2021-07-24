@@ -1,0 +1,31 @@
+package com.example.thegoldenratio.facerecognition.AzureApiJson
+
+data class FaceLandmarks(
+    val eyeLeftBottom: EyeLeftBottom,
+    val eyeLeftInner: EyeLeftInner,
+    val eyeLeftOuter: EyeLeftOuter,
+    val eyeLeftTop: EyeLeftTop,
+    val eyeRightBottom: EyeRightBottom,
+    val eyeRightInner: EyeRightInner,
+    val eyeRightOuter: EyeRightOuter,
+    val eyeRightTop: EyeRightTop,
+    val eyebrowLeftInner: EyebrowLeftInner,
+    val eyebrowLeftOuter: EyebrowLeftOuter,
+    val eyebrowRightInner: EyebrowRightInner,
+    val eyebrowRightOuter: EyebrowRightOuter,
+    val mouthLeft: MouthLeft,
+    val mouthRight: MouthRight,
+    val noseLeftAlarOutTip: NoseLeftAlarOutTip,
+    val noseLeftAlarTop: NoseLeftAlarTop,
+    val noseRightAlarOutTip: NoseRightAlarOutTip,
+    val noseRightAlarTop: NoseRightAlarTop,
+    val noseRootLeft: NoseRootLeft,
+    val noseRootRight: NoseRootRight,
+    val noseTip: NoseTip,
+    val pupilLeft: PupilLeft,
+    val pupilRight: PupilRight,
+    val underLipBottom: UnderLipBottom,
+    val underLipTop: UnderLipTop,
+    val upperLipBottom: UpperLipBottom,
+    val upperLipTop: UpperLipTop
+)

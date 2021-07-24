@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.thegoldenratio.facerecognition.faceRecognition;
+import com.example.thegoldenratio.fibonacciClock.FibonacciClock;
+import com.example.thegoldenratio.logos.Logos;
+import com.example.thegoldenratio.ratioCalculator.GoldenRatioCalculator;
 
 public class Intro extends AppCompatActivity {
 

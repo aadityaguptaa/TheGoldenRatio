@@ -4,6 +4,9 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModel;
 
 import com.google.common.io.ByteStreams;
@@ -14,6 +17,7 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -47,6 +51,7 @@ public class FaceRecViewModel extends ViewModel {
 
     public void analyzeImage(){
         final OkHttpClient client = new OkHttpClient();
+
 
         AsyncTask<Void, Void, String> task = new AsyncTask<Void, Void, String>() {
             @Override

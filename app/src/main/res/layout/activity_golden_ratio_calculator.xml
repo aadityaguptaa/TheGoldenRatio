@@ -1,111 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".GoldenRatioCalculator">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <EditText
-        android:id="@+id/editTextNumberA"
-        style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense"
-        android:layout_width="251dp"
-        android:layout_height="267dp"
-        android:backgroundTint="#E91E63"
-        android:cursorVisible="true"
-        android:gravity="center"
-        android:hint="A"
-        android:inputType="number"
-        android:onClick="onClick"
-        android:textColor="#E91E63"
-        android:textColorHint="#E91E63"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+    <data>
 
-    <EditText
-        android:id="@+id/editTextNumberB"
-        style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense"
-        android:layout_width="159dp"
-        android:layout_height="269dp"
-        android:backgroundTint="#F1F1F1"
-        android:cursorVisible="true"
-        android:gravity="center"
-        android:hint="B"
-        android:inputType="number"
-        android:onClick="onClick"
-        android:textColor="#E91E63"
-        android:textColorHint="#E91E63"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberA"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+    </data>
 
-    <EditText
-        android:id="@+id/editTextNumberAplusB"
-        style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense"
-        android:layout_width="411dp"
-        android:layout_height="419dp"
-        android:backgroundTint="#F1F1F1"
-        android:cursorVisible="true"
-        android:gravity="center"
-        android:hint="A + B"
-        android:inputType="number"
-        android:onClick="onClick"
-        android:textColor="#E91E63"
-        android:textColorHint="#E91E63"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ratioCalculator.GoldenRatioCalculator">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="A"
-        android:textColor="#E91E63"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberA"
-        app:layout_constraintVertical_bias="0.044" />
+        <EditText
+            android:id="@+id/editTextNumberA"
+            style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#191013"
+            android:cursorVisible="true"
+            android:gravity="center"
+            android:hint="Value A"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textColorHint="#434242"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editTextNumberB"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberAplusB"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="B"
-        android:textColor="#E91E63"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberA"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberB"
-        app:layout_constraintVertical_bias="0.04000002" />
+        <EditText
+            android:id="@+id/editTextNumberB"
+            style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F1F1F1"
+            android:cursorVisible="true"
+            android:gravity="center"
+            android:hint="Value B"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textColorHint="#434242"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextNumberA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/editTextNumberA"
+            app:layout_constraintTop_toTopOf="@+id/editTextNumberA" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="A + B"
-        android:textColor="#E91E63"
+        <EditText
+            android:id="@+id/editTextNumberAplusB"
+            style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F1F1F1"
+            android:cursorVisible="true"
+            android:gravity="center"
+            android:hint="A + B"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textColorHint="#434242"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/editTextNumberA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GoldenRatioCalculator" />
 
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberAplusB"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberAplusB"
-        app:layout_constraintVertical_bias="0.04000002" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/GoldenRatioCalculator"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Golden Ratio Calculator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ratioCalculatorButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editTextNumberB"
+            app:layout_constraintStart_toStartOf="@+id/editTextNumberA"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberA" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

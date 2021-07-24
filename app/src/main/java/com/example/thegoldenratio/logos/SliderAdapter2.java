@@ -1,4 +1,4 @@
-package com.example.thegoldenratio;
+package com.example.thegoldenratio.logos;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.thegoldenratio.R;
 
 public class SliderAdapter2 extends PagerAdapter {
 
@@ -50,7 +53,7 @@ public class SliderAdapter2 extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == (RelativeLayout) object;
+        return view == (ConstraintLayout) object;
     }
 
     @NonNull
@@ -75,6 +78,6 @@ public class SliderAdapter2 extends PagerAdapter {
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((RelativeLayout)object);
+        container.removeView((ConstraintLayout)object);
     }
 }

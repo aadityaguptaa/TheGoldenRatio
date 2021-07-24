@@ -1,4 +1,4 @@
-package com.example.thegoldenratio;
+package com.example.thegoldenratio.logos;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +11,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+
+import com.example.thegoldenratio.Intro;
+import com.example.thegoldenratio.R;
+import com.example.thegoldenratio.TypeWriter;
+import com.example.thegoldenratio.Utils;
 
 public class Logos extends AppCompatActivity {
 
@@ -31,12 +36,7 @@ public class Logos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logos);
 
-        TypeWriter typewriterlogo = findViewById(R.id.typeWriterlogo);
-        typewriterlogo.setCharacterDelay(75);
-        typewriterlogo.animateText("Here we have some famous Logos which uses The Golden Ratio in there design");
-        Utils.delay(12, () -> {
-            typewriterlogo.setVisibility(View.INVISIBLE);
-        });
+
 
         viewPager2 = (ViewPager)findViewById(R.id.viewPagerlogo);
         linearLayout = findViewById(R.id.linearLayoutlogo);

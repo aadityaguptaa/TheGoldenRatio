@@ -29,13 +29,13 @@ public class TypeWriter extends androidx.appcompat.widget.AppCompatTextView {
         }
     };
 
-    public void animateText(CharSequence text) {
-        mText = text;
-        mIndex = 0;
+    public  void animateText(CharSequence text) {
+            mText = text;
+            mIndex = 0;
 
-        setText("");
-        mHandler.removeCallbacks(characterAdder);
-        mHandler.postDelayed(characterAdder, mDelay);
+            setText("");
+            mHandler.removeCallbacks(characterAdder);
+            mHandler.postDelayed(characterAdder, mDelay);
     }
 
     public void setCharacterDelay(long millis) {
