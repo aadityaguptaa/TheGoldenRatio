@@ -46,6 +46,7 @@ class faceRecognition: AppCompatActivity() {
         if (resultCode == RESULT_OK && requestCode == 1) {
             val bitmap = BitmapFactory.decodeFile(viewModel.currentPhotoPath)
             if (bitmap != null) {
+                binding.activityDesFace.visibility = View.INVISIBLE
                 binding.imageView.visibility = View.VISIBLE
                 viewModel.mSelectedImage = Bitmap.createScaledBitmap(
                     bitmap,
@@ -55,31 +56,7 @@ class faceRecognition: AppCompatActivity() {
                 )
                 binding.imageView.setImageBitmap(viewModel.mSelectedImage)
                 viewModel.analyzeImage()
-                /*lifecycleScope.launchWhenCreated {
-                    val response = try {
-                        val outputStream = ByteArrayOutputStream()
-                        val myBitmap: Bitmap = viewModel.mSelectedImage
-                        myBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-                        val inputStream = ByteArrayInputStream(outputStream.toByteArray())
 
-                        val localImageBytes: ByteArray = ByteStreams.toByteArray(inputStream)
-                        val mediaType = MediaType.parse("application/octet-stream")
-                        val body = RequestBody.create(
-                            mediaType,
-                            localImageBytes
-                        )
-                        RetrofitInstance.api.getFaceInfo(
-                        body)
-                    }catch (e: IOException) {
-                        Log.e("asdf", e.toString())
-                        return@launchWhenCreated
-                    }catch (e: HttpException) {
-                        Log.e("asdf", e.toString())
-                        return@launchWhenCreated
-                    }*/
-                    /*    Log.i("asdf", response.toString())
-
-                }*/
                 try {
                     viewModel.analyzeJson(viewModel.resultString)
                     binding.forwardArrow.setOnClickListener {

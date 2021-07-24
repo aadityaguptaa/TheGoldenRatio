@@ -83,5 +83,22 @@
             app:layout_constraintBottom_toTopOf="@+id/forwardArrow"
             app:layout_constraintEnd_toEndOf="@+id/forwardArrow"
             app:layout_constraintStart_toStartOf="@+id/backWardArrow" />
+
+        <TextView
+            android:id="@+id/activityDesFace"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:text="The human face abounds with examples of the Golden Ratio, also known as the Golden Section or Divine Proportion.   \n\n Click on the plus button, take a selfie, and we'll draw Golden Rectangles on it!\n\nSounds fun right :)"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

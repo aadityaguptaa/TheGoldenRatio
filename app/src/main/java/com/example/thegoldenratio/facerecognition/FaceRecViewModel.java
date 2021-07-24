@@ -103,6 +103,7 @@ public class FaceRecViewModel extends ViewModel {
         }
     }
 
+
     public void analyzeJson(String result){
         try {
             JSONArray output = new JSONArray(result);
